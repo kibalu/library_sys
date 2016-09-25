@@ -1,0 +1,37 @@
+<% provide(:title, 'Create Room') %>
+<h1>Create Room</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@room) do |f| %>
+      <%= render 'shared/errorcr_messages' %>
+    
+      <h4><%= f.label :rommid, "Room id" %></br></h4>
+      Please follow the rules:Library fist letter+room number+[time]. eg:J1111[11-12]
+      <%= f.text_field :rommid, class: 'form-control' %>
+      <h4><%= f.label :time %></br></h4>
+      Please follow the rules:use 24h form. eg:13:00-14:00
+      <%= f.text_field :time, class: 'form-control' %>
+
+      <h4><%= f.label :build %></h4>
+      
+      <h3><%= f.radio_button :build ,"James.B.Hunt" , checked: true %>
+      <%= f.label :status, "James.B.Hunt", :value => "James.B.Hunt"  %>
+      
+      <%= f.radio_button :build, "D.H.Hill"  %>
+      <%= f.label :build, "D.H.Hill", :value => "D.H.Hill" %></h3>
+      
+      <h4><%= f.label :size %></h4>
+      <h3><%= f.radio_button :size ,"4" , checked: true %>
+      <%= f.label :size, "4", :value => "4"  %>
+      <%= f.radio_button :size ,"6" %>
+      <%= f.label :size, "6", :value => "6"  %>
+      <%= f.radio_button :size, "12"  %>
+      <%= f.label :size, "12", :value => "12" %></h3>
+     
+
+
+      <%= f.submit "Create a room", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<li>
+  <%= link_to user.name, user %>
+  <% if current_user.admin? && !current_user?(user) && !user.topadmin?%>
+  
+   
+    | <%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+     |<%= link_to 'add/cancel him as a admin', edit_user_path(user) %>                              
+    
+  <% end %>
+</li>

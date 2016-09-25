@@ -1,0 +1,17 @@
+<footer class="footer">
+  <%= form_tag(rooms_path, :method => "get", id: "search-form") do %>
+<p>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search room", :rommid => nil %>
+</p>
+<% end %>
+  <small>
+    This system is creat by Zhiren Lu(nzlu), Xilai Li(xli47), Siyu Huang(shuang7)
+  </small>
+  <nav>
+    <ul>
+      
+      
+    </ul>
+  </nav>
+</footer>

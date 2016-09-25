@@ -1,0 +1,19 @@
+<% provide(:title, 'Sign up') %>
+<h1>history</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@history) do |f| %>
+      <%= f.label :action %>
+      <%= f.text_field :action, class: 'form-control' %>
+
+      <%= f.label :room_id %>
+      <%= f.text_field :room_id, class: 'form-control' %>
+
+      <%= f.label :user_id %>
+      <%= f.text_field :user_id, class: 'form-control' %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
