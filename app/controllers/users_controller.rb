@@ -52,6 +52,11 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+  
+  def adminlist
+    list=User.where(:admin => true)
+    @users=list.paginate(page: params[:page])
+  end
 
   private
 
