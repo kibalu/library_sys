@@ -17,7 +17,12 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
-      
+      <% if logged_in?%>
+      <h3><%= f.radio_button :admin ,false , checked: true %>
+      <%= f.label :admin, "USER", :value => false  %>
+      <%= f.radio_button :admin ,true %>
+      <%= f.label :admin, "ADMIN", :value => true  %>
+      <% end %>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>

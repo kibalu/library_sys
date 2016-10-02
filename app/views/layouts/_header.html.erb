@@ -29,6 +29,7 @@
           </li>
             <% if current_user.admin?%>
             <li><%= link_to "Create a room", createroom_path %></li>
+            <li><%= link_to "Create a User/admin", signup_path %></li>
             <% end %>
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
