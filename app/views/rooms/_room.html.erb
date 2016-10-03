@@ -1,6 +1,7 @@
 <li>
   <%= link_to room.rommid, room %>
   <% if current_user.admin? %>
+  |<%= link_to "edit" , {:controller => "rooms", :action => "editroom", :id => room.id} %>
     | <%= link_to "delete", room, method: :delete,
                                   data: { confirm: "You sure?" } %>
   <% end %>

@@ -22,16 +22,14 @@
                                                    <% end %>
       </h4>
       
-      
-      
-      
-      <% if !@room.status?%>
+     
+          <% if !@room.status?%>
              <%= link_to "book", edit_room_path, class: "btn btn-lg btn-primary" %>
-        <% else %>
-          <% if @room.booker==current_user.id||current_user.admin? %>
-             <%= link_to "cancel", edit_room_path, class: "btn btn-lg btn-primary" %>
+          <% else %>
+             <% if @room.booker==current_user.id||current_user.admin? %>  <!--if @room.booker==current_user.id||current_user.admin?-->
+               <%= link_to "cancel", edit_room_path, class: "btn btn-lg btn-primary" %>
+             <% end %>
           <% end %>
-      <% end %>
       
       
       

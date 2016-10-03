@@ -17,6 +17,8 @@ class RoomsController < ApplicationController
     end
   end
   
+  
+  
   def edit
     @room = Room.find(params[:id])
     # @history=History.new
@@ -58,9 +60,11 @@ class RoomsController < ApplicationController
     redirect_to rooms_url
   end
   
+ 
   
-  
-  
+  def editroom
+     @editroom = Room.find(params[:id])
+  end
   
   
   

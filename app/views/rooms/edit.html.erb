@@ -8,61 +8,45 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%if !@room.status?%>
-    <h1>Are you sure to book this room</h1>
-    </b>
-    </b>
-    </b>
-    <%= form_for(@room, remote: true, :method => :put) do |f| %>
-    
-    <%= f.hidden_field :status, :value => "true"  %></p>
-    
-    <%= f.hidden_field :booker, :value =>"#{current_user.id}" %>
-                    
-    <%= f.submit "Confirm", class: "btn btn-primary", :id => 'room' %>
-      
-    <% end %>
-    
-    <%= form_for(History.new, remote: true, :method => :post) do |f| %>
-    
-    <%= f.hidden_field :action, :value => "book"  %></p>
-    <%= f.hidden_field :user_id, :value => "#{current_user.id}"  %></p>
-    <%= f.hidden_field :room_id, :value => "#{@room.id}"  %></p>
-    <%= f.hidden_field :username, :value => "#{current_user.name}"  %></p>
-    <%= f.hidden_field :roomname, :value => "#{@room.rommid}"  %></p>
-     <!--<= f.text_field :haveroom, :value => "true"  %></p>-->
-    
-    
-    
-    <%= f.submit "Confirm", class: "btn btn-primary" , :id => 'history', :style => 'display: none;' %>
-    <% end %>
-    
-    
-    
-    <%else%>
-      <h1>Are you sure to cancel this room</h1>
-      <%= form_for(@room) do |f| %>
-      <%= f.hidden_field :status, :value => "false"  %>
-      <%= f.hidden_field :booker, :value =>"nil"  %>
-      <%= f.submit "Cancel", class: "btn btn-primary" , :id => 'room'%>
-      <% end %>
-      
-    <%= form_for(History.new, remote: true, :method => :post) do |f| %>
-    
-    <%= f.hidden_field :action, :value => "cancel"  %></p>
-    <%= f.hidden_field :user_id, :value => "#{current_user.id}"  %></p>
-    <%= f.hidden_field :room_id, :value => "#{@room.id}"  %></p>
-    <%= f.hidden_field :username, :value => "#{current_user.name}"  %></p>
-    <%= f.hidden_field :roomname, :value => "#{@room.rommid}"  %></p>
-     <!--<= f.text_field :haveroom, :value => "true"  %></p>-->
-    
-    
-    
-    <%= f.submit "Confirm", class: "btn btn-primary" , :id => 'history', :style => 'display: none;' %>
-    <% end %>
+        
       
       
-    <% end %>
+  
+   <%if !@room.status?%>
+          <h1>Are you sure to book this room</h1>
+          <%= form_for(@room, remote: true, :method => :put) do |f| %>
+          <%= f.hidden_field :status, :value => "true"  %></p>
+          <%= f.hidden_field :booker, :value =>"#{current_user.id}" %>
+          <%= f.submit "Confirm", class: "btn btn-primary", :id => 'room' %>
+          <% end %>
+          <%= form_for(History.new, remote: true, :method => :post) do |f| %>
+          <%= f.hidden_field :action, :value => "book"  %></p>
+          <%= f.hidden_field :user_id, :value => "#{current_user.id}"  %></p>
+          <%= f.hidden_field :room_id, :value => "#{@room.id}"  %></p>
+          <%= f.hidden_field :username, :value => "#{current_user.name}"  %></p>
+          <%= f.hidden_field :roomname, :value => "#{@room.rommid}"  %></p>
+           <!--<= f.text_field :haveroom, :value => "true"  %></p>-->
+          <%= f.submit "Confirm", class: "btn btn-primary" , :id => 'history', :style => 'display: none;' %>
+          <% end %>
+   <%else%>
+          <h1>Are you sure to cancel this room</h1>
+          <%= form_for(@room) do |f| %>
+          <%= f.hidden_field :status, :value => "false"  %>
+          <%= f.hidden_field :booker, :value =>"nil"  %>
+          <%= f.submit "Cancel", class: "btn btn-primary" , :id => 'room'%>
+          <% end %>
+      
+          <%= form_for(History.new, remote: true, :method => :post) do |f| %>
+          <%= f.hidden_field :action, :value => "cancel"  %></p>
+          <%= f.hidden_field :user_id, :value => "#{current_user.id}"  %></p>
+          <%= f.hidden_field :room_id, :value => "#{@room.id}"  %></p>
+          <%= f.hidden_field :username, :value => "#{current_user.name}"  %></p>
+          <%= f.hidden_field :roomname, :value => "#{@room.rommid}"  %></p>
+          <!--<= f.text_field :haveroom, :value => "true"  %></p>-->
+          <%= f.submit "Confirm", class: "btn btn-primary" , :id => 'history', :style => 'display: none;' %>
+          <% end %>
+   <% end %>
+   
   
   </div>
 </div>

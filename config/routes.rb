@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'createuser'  => 'users#new'
   get 'roomshow'      => 'rooms#show'
   get 'admins'      => 'users#adminlist'
-  
+  get 'editroom'     => 'rooms#editroom'
 
 
 
