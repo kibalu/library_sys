@@ -26,5 +26,8 @@ Following are the things that are already set up :
   * Anyone can signup to become a member. He is automatically logged in after signup.He can update his password and name (email update is not allowed).
   * Book a room that is available to member and cancel the room that he booked.
   * See the room that he booked in the profile page and also his history of booking room (only list the latest 10 histories, though history model saved all the history )
-* <b>Extra Credit:</b>
-  * when you book a room ,a e-mail will sent to your E-mail address to notice you.
+* <b>Test</b>
+  * we have write the test case to the user model and user controller.
+    * users_controller_test(path:test/controllers/users_controller_test.rb):test the function of the controller
+    * user_test(path:test/models/user_test.rb):test the function of the model
+    * integration test(path:test/integration/):test the important part of the users, like:login, signup, edit.
