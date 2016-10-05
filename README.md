@@ -12,12 +12,12 @@ Following are the things that are already set up :
   * <b><u>Self profile</u></b>:
     * An admin can login and update his/her profile details .
   * <b><u>Manage Admins</u></b>: 
-    * View the admin status of a user in profile page.
+    * Admin can view all the admins through the adminlist on the top of the website.
     * delete the users and admins in the system(except himself and the admin”example@railstutorial.org” )
   * <b><u>Manage Rooms</u></b>: 
     * Admin can create a new room, delete the room, see list of the room. 
     * Only admin can see the history of the room(only list the latest 10 histories of the room, though history model saved all the history )
-    * Only admin can cancel the room booked by others. 
+    * Only admin can cancel the room booked by others: go to the room showpage, if the room is booked by other member,admin also can the cancel button and cancel the room. 
   * <b><u>Manage Members</u></b>: 
     * Displays a list of all library members 
     * See the profile of each member and see the history(only list the latest 10 histories, though history model saved all the history )
